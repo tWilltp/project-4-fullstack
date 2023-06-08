@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Good Makeup - Products Page</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for products in products_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <a href="#" class="product-link">
+                                    <h2 class="card-title">{{ products.title }}</h2>
+                                    <p class="card-text">{{ products.excerpt }}</p>
+                                </a>
+                                <hr>
+                                <p class="card-text text-muted h6">{{ products.created_on }}
+                                    <i class="far fa-heart">{{ products.number_of_likes }}</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

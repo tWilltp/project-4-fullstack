@@ -106,6 +106,26 @@ body {
     color: lightgray;
 }
 
+.product-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.product-link:hover,
+.product-link {
+    color: #E84610;
+}
+
+.product-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.product-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
 .btn-signup {
     background-color: #23BBBB;
     color: #fff;
