@@ -14,7 +14,7 @@ class ReviewsAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Products)
-class ProductsAdmin(SummernoteModelAdmin):
+class ProductsAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']

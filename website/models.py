@@ -51,3 +51,17 @@ class Products(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+
+# class Basket(models.Model):
+#     product_id = models.ForeignKey(
+#         Products, on_delete=models.CASCADE, related_name="basket_item")
+#     name = models.Products('title')
+#     body = CloudinaryField('image', default='placeholder')
+#     approved = models.BooleanField(default=True)
+
+#     class Meta:
+#         ordering = ['created_on']
+
+#     def __str__(self):
+#         return f"basket item {self.body} {self.title}"
