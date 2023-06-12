@@ -41,6 +41,24 @@
                     <p>basket</p>
                 </a>
             </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_logout' %}">
+                    <p>Logout</p>
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_signup' %}">
+                    <p>Register</p>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'account_login' %}">
+                    <p>Login</p>
+                </a>
+            </li>
+            {% endif %}
         </ul>
     </nav>
 
