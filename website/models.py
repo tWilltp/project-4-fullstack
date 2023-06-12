@@ -29,6 +29,23 @@ class Reviews(models.Model):
         return self.likes.count()
 
 
+class ReviewComments(models.Model):
+
+    comments = models.ForeignKey(
+        Reviews, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
+
+
 class Products(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
