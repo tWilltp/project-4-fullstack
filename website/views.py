@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Reviews, Products
+from .forms import CommentForm
 
 
 def home_view(request):
@@ -31,7 +32,8 @@ class ReviewsDetail(View):
             {
                 "reviews": reviews,
                 "comments": comments,
-                "liked": liked
+                "liked": liked,
+                "comment_form": CommentForm(),
             },
         )
 
