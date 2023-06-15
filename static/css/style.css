@@ -1,6 +1,60 @@
+/* base template styles */
+
 body {
-    background-color: #F9FAFC;
+    background-color: #efd49f;
 }
+
+/* nav bar styles */
+
+.navbar {
+    background: #f09090;
+    list-style-type: none;
+    height: 100px;
+    margin: 0;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-left: 50px;
+    float: left;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: black;
+    border-radius: 3px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.active:hover {
+    background: #23BBBB;
+    padding: 5px;
+    transition: .5s;
+}
+
+/* home page styles */
+
+.home-title {
+    margin: 50px;
+    background-color: #23BBBB;
+}
+
+/* products page styles */
+
+
+
+/* pre-loaded css */
 
 .brand {
     font-family: Lato, sans-serif;

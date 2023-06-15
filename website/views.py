@@ -78,12 +78,5 @@ class ProductsList(generic.ListView):
     paginate_by = 30
 
 
-# class BasketList(generic.ListView):
-#     model = Basket
-#     queryset = Basket.objects.filter(status=1).order_by('created_on')
-#     template_name = 'basket.html'
-#     paginate_by = 6
-
-
 def basket_view(request):
     return render(request, 'basket.html')
