@@ -1,13 +1,13 @@
 /* base template styles */
 
 body {
-    background-color: #efd49f;
+    background-color: #f4e2c2;
 }
 
 /* nav bar styles */
 
 .navbar {
-    background: #f09090;
+    background: #eae7de;
     list-style-type: none;
     height: 100px;
     margin: 0;
@@ -38,16 +38,19 @@ body {
 }
 
 .active:hover {
-    background: #23BBBB;
+    background: #f1dbb1;
     padding: 5px;
     transition: .5s;
 }
 
 /* home page styles */
 
-.home-title {
+.page-title {
     margin: 50px;
-    background-color: #23BBBB;
+    background-color: #eae7de;
+    width: 100%;
+    float: left;
+    margin-left: 0px;
 }
 
 /* products page styles */
