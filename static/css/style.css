@@ -43,7 +43,7 @@ body {
     transition: .5s;
 }
 
-/* home page styles */
+/* page title styles */
 
 .page-title {
     margin: 50px;
@@ -53,9 +53,30 @@ body {
     margin-left: 0px;
 }
 
+/* main content */
+
+main {
+    min-height: calc(100vh - 130px - 20px);
+}
+
+/* footer styles */
+
+.footer {
+    list-style-type: none;
+    background: #eae7de;
+    padding: 20px;
+}
+
+.footer-links {
+    text-align: center;
+}
+
+.footer-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
 /* products page styles */
-
-
 
 /* pre-loaded css */
 
