@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Reviews, Products
+from .models import Reviews, Product
 from .forms import CommentForm
 
 
@@ -71,11 +71,9 @@ class ReviewsDetail(View):
         )
 
 
-class ProductsList(generic.ListView):
-    model = Products
-    queryset = Products.objects.filter(status=1).order_by('created_on')  # change this to whatever layout you want
-    template_name = 'products.html'
-    paginate_by = 30
+def all_products(request):
+    """ render products """
+    return render(request, 'templates/products.html')
 
 
 def basket_view(request):

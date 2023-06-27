@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Reviews, ReviewComments, Products
+from .models import Reviews, ReviewComments, Product, Category
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -25,11 +25,23 @@ class CommentsAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 
-@admin.register(Products)
-class ProductsAdmin(admin.ModelAdmin):
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
 
-    list_display = ('title', 'slug', 'status', 'created_on')
-    search_fields = ['title', 'content']
-    prepopulated_fields = {'slug': ('title',)}
-    list_filter = ('status', 'created_on')
-    summernote_fields = ('content')
+    list_display = (
+        'sku',
+        'name',
+        'category',
+        'price',
+        'rating',
+        # 'image',
+    )
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+
+    list_display = (
+        'friendly_name',
+        'name',
+    )
