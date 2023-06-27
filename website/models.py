@@ -18,6 +18,7 @@ class Reviews(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='review_likes', blank=True)
+     #  review_id =  # AutoIncrement()
 
     class Meta:
         ordering = ['-created_on']
@@ -38,12 +39,25 @@ class ReviewComments(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    #  ReviewComments_id = Reviews.review_id
+
 
     class Meta:
         ordering = ['created_on']
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=20)
+    friendly_name = models.CharField(max_length=20, null=True, blank=False)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
 
 
 class Products(models.Model):
@@ -68,3 +82,6 @@ class Products(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+
+# orders model
