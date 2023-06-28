@@ -10,7 +10,7 @@
         <div class="col-12">
             {% for products in products %}
             <h1>logo</h1>
-            <h2>{{ category.friendly_name }}</h2>
+            <h2>{{ products.category.friendly_name }}</h2>
             <p>{{ products.name }}</p>
             <p>{{ products.description }}</p>
             <p>{{ products.price }}</p>

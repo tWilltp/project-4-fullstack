@@ -86,7 +86,15 @@ def products_detail(request):
     context = {
         'products': products,
     }
-    return render(request, "products_detail.html", context)
+    return render(request, 'products_detail.html', context)
+
+
+# def category(request):
+#     category = Category.objects.all()
+#     context = {
+#         'category': category
+#     }
+#     return render(request, 'products.html', 'products_detail.html', context)
 
 
 def basket_view(request):

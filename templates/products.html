@@ -4,27 +4,43 @@
 
 <h1 class="page-title">Products Page</h1>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-3 col-sm-6 text-center">
-            {% for products in products %}
-            <a href="{% url 'products_detail' %}">
-                <h2 class="Product-name">
-                    <strong>{{ category.friendly_name }}</strong>
-                </h2>
-                <h4>
-                    {{ products.name }}
-                </h4>
-                <p>
-                    {{ products.description }} <br>
-                    {{ products.price }}
-                </p>
-                <p>
-                    {{ products.rating }}
-                </p>
-            </a>
-            {% endfor %}
+<!-- <div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for products in products %}
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1>{{ products.category.friendly_name }}</h1>
+                    <p>{{ products.name }}</p>
+                </div>
+            </div>
         </div>
+        {% endfor %}
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        {% for products in products %}
+        <div class="card h-100 border-0">
+            <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+                <a href="{% url 'products_detail' %}">
+                    <h2 class="Product-name">
+                        <strong>{{ products.category.friendly_name }}</strong>
+                    </h2>
+                    <h4>
+                        {{ products.name }}
+                    </h4>
+                    <p>
+                        {{ products.description }} <br>
+                        {{ products.price }}
+                    </p>
+                    <p>
+                        {{ products.rating }}
+                    </p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
