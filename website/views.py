@@ -82,8 +82,11 @@ def all_products(request):
 
 def products_detail(request):
     """ returns specific product on page"""
-    queryset = Product.objects.all()
-    return render(request, "products_detail.html", queryset)
+    products = Product.objects.all()
+    context = {
+        'products': products,
+    }
+    return render(request, "products_detail.html", context)
 
 
 def basket_view(request):
