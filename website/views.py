@@ -73,7 +73,15 @@ class ReviewsDetail(View):
 
 def all_products(request):
     """ render products """
-    return render(request, 'templates/products.html')
+    all_products = Product.objects.all()
+    context = {'all_products': all_products}
+    return render(request, 'products.html', context)
+
+
+def products_detail(request):
+    """ returns specific product on page"""
+    queryset = Product.objects.all()
+    return render(request, "products_detail.html")
 
 
 def basket_view(request):

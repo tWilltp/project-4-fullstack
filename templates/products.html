@@ -4,107 +4,28 @@
 
 <h1 class="page-title">Products Page</h1>
 
-<div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font">Products</h2>
-            <hr class="w-50 mb-1">
-        </div>
-    </div>
-    <div class="row">
-        <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
-            <div class="row">
-                {% for products in products_list %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0">
-                            {% if product.image %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </a>
-                            {% else %}
-                            <a href="">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ product.title }}</p>
-                            </div>
-                            <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 text-left font-weight-bold">${{ product.name }}</p>
-                                        {% if product.created_on %}
-                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.created_on }} / 5</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:1 %}
-                        <div class="col-12 d-sm-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}                        
-                    {% if forloop.counter|divisibleby:2 %}
-                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:3 %}
-                        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if forloop.counter|divisibleby:4 %}
-                        <div class="col-12 d-none d-xl-block mb-5">
-                            <hr>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
+        <div class="col-lg-3 col-sm-6 text-center">
+            {% for products in context %}
+            <a href="{% url 'products_detail' %}">
+                <h2 class="Product-name">
+                    <strong>{{ category.friendly_name }}</strong>
+                </h2>
+                <h4>
+                    {{ products.name }}
+                </h4>
+                <p>
+                    {{ products.description }} <br>
+                    {{ products.price }}
+                </p>
+                <p>
+                    {{ products.rating }}
+                </p>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </div>
 
 {% endblock %}
-
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col text-center mt-3 ">
-            <div class="row">
-                <div class="row">
-                    <div class="product-container">
-                        <div class="row mt-1 mb-3">
-
-                        </div>
-                        <div class="row">
-                        {% for products in products_list %}
-                            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                <div class="card-body h-100 border-0">
-                                    <a href="#" class="product-link">
-                                        <h2 class="card-title">{{ products.title }}</h2>
-                                        <p class="card-text">{{ products.excerpt }}</p>
-                                    </a>
-                                    <hr>
-                                    <p class="card-text text-muted h6">{{ products.created_on }}
-                                        <i class="far fa-heart">{{ products.number_of_likes }}</i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div> -->
