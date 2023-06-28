@@ -7,20 +7,23 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-3 col-sm-6 text-center">
-            {% for products in context %}
+            {% for products in products %}
             <a href="{% url 'products_detail' %}">
                 <h2 class="Product-name">
                     <strong>{{ category.friendly_name }}</strong>
                 </h2>
                 <h4>
                     {{ products.name }}
+                    test
                 </h4>
                 <p>
                     {{ products.description }} <br>
                     {{ products.price }}
+                    test
                 </p>
                 <p>
                     {{ products.rating }}
+                    test
                 </p>
             </a>
             {% endfor %}
