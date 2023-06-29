@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('website', '0001_initial'),
     ]
-
+    
     operations = [
         migrations.CreateModel(
             name='Products',

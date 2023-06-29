@@ -38,7 +38,7 @@ The Site consists of several pages displaying products, product reviews, product
 
 ## features
 
-*
+* 
 *
 *
 *

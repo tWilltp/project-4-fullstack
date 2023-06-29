@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 
-<h1 class="page-title">Product_detail Page</h1>
-
 {% block content %}
+
+<h1 class="page-title">Product_detail Page</h1>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
-            {% for products in products %}
             <h1>logo</h1>
             <h2>{{ products.category.friendly_name }}</h2>
             <p>{{ products.name }}</p>
             <p>{{ products.description }}</p>
             <p>{{ products.price }}</p>
             <p>{{ products.rating }}</p>
-            {% endfor %}
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn">
+                        Add to basket?
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
