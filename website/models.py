@@ -18,7 +18,6 @@ class Reviews(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='review_likes', blank=True)
-    #  review_id =  # AutoIncrement()
 
     class Meta:
         ordering = ['-created_on']
@@ -39,7 +38,6 @@ class ReviewComments(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    #  ReviewComments_id = Reviews.review_id
 
     class Meta:
         ordering = ['created_on']
